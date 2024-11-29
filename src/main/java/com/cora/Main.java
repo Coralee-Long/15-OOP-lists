@@ -22,7 +22,7 @@ public class Main {
         names.add("Max");
 
         // removing names
-        names.remove("Martin");
+        names.remove("Marten");
 
         // adding names at a specific position
         names.add(1, "Robert");
@@ -70,5 +70,54 @@ public class Main {
         for(Book book: books) {
             System.out.println(book);
         }
+
+
+        /// ------------------ EXERCISE:
+
+        Course course1 = new Course("Science", "Mr. Matthews", 45);
+        Course course2 = new Course("Mathematics", "Ms. West", 20);
+        Course course3 = new Course("Geography", "Mr. Mox", 2);
+
+        Student student1 = new Student(1, "Jane", "Doe" );
+        Student student2 = new Student(2, "Bob", "Smith");
+        Student student3 = new Student(3, "John", "Smith");
+        Student student4 = new Student(4, "Jane", "Smith");
+        Student student5 = new Student(5, "Martin", "Jackson");
+
+        // Create List of students
+        List<Student> students = new ArrayList<>();
+
+        // Adding students (Student object) to student list
+        students.add(student1);
+        students.add(student2);
+        students.add(student3);
+
+
+        // Create new School Instance
+        School school = new School();
+
+        // Adding Students to School
+        school.addStudent(student1); // from the new method above
+        school.addStudent(student2);
+        school.addStudent(student3);
+        school.addStudent(student4);
+        school.addStudent(student5);
+
+        // removing a student
+        school.removeStudent(student2);
+
+        // find student by id (returns student object)
+        System.out.println(school.getStudentById(3));
+
+        System.out.println(school);
+
+        student2.addCourse(course1);
+        student4.addCourse(course3);
+        student5.addCourse(course2);
+
+        System.out.println(school);
+
+
+
     }
 }
